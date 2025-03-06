@@ -1,0 +1,190 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>IndianOil Mockup</title>  
+    <style>  
+        body {  
+            margin: 0;  
+            background-color: #e0f7fa;  
+            scroll-behavior: smooth;  
+            font-family: Arial, sans-serif;  
+        }  
+
+        header {  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+            background-color: #0077b6;  
+            color: white;  
+            padding: 10px 20px;  
+        }  
+
+        .logo h1 {  
+            margin: 0;  
+            color: black;  
+        }  
+
+        nav ul {  
+            list-style-type: none;  
+            margin: 0;  
+            padding: 0;  
+            display: flex;  
+        }  
+
+        nav ul li {  
+            margin: 0 15px;  
+        }  
+
+        nav ul li a {  
+            color: white;  
+            text-decoration: none;  
+            padding: 10px 15px;  
+            transition: background 0.3s, color 0.3s;  
+        }  
+
+        nav ul li a:hover {  
+            background: rgba(255, 255, 255, 0.2);  
+            color: black;  
+            border-radius: 5px;  
+        }  
+
+        .search-container {  
+            display: flex;  
+            align-items: center;  
+            border: 1px solid #ff5722;  
+            border-radius: 25px;  
+            padding: 5px 10px;  
+            background-color: white;  
+        }  
+
+        .search-icon, .mic-icon {  
+            color: #ff5722;  
+            cursor: pointer;  
+        }  
+
+        input {  
+            border: none;  
+            outline: none;  
+            padding: 10px;  
+            flex-grow: 1;  
+            font-size: 16px;  
+        }  
+
+        .aboutUs {  
+            background-color: white;  
+            border-radius: 10px;  
+            padding: 20px;  
+            margin: 20px;  
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+            transition: max-height 0.5s ease;  
+        }  
+
+        .aboutUs h2 {  
+            color: #0077b6;  
+            margin-bottom: 10px;  
+            font-size: 24px;  /* Adjusted font size */  
+        }  
+
+        .aboutUs p {  
+            line-height: 1.6;  
+            margin-bottom: 10px;  
+            color: #333;  /* Changed font color */  
+            font-size: 18px;  /* Adjusted font size */  
+        }  
+
+        .aboutUs ul {  
+            list-style: inside;  
+        }  
+
+        .read-more {  
+            background-color: #0077b6;  
+            color: white;  
+            padding: 10px 15px;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            transition: background 0.3s;  
+        }  
+
+        .read-more:hover {  
+            background-color: #005f8a;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <header>  
+        <div class="logo">   
+            <h1>IndianOil</h1>  
+        </div>  
+        <nav>  
+            <ul>  
+                <li><a href="#">About Us</a></li>  
+                <li><a href="#">IndianOil For You</a></li>  
+                <li><a href="#">IndianOil for Environment</a></li>  
+                <li><a href="#">We are Listening</a></li>  
+            </ul>  
+        </nav>  
+        <div class="search-container">  
+            <div class="search-icon">  
+                <i class="fas fa-search"></i>  
+            </div>  
+            <input type="text" placeholder="What are you looking for?">  
+            <div class="mic-icon">  
+                <i class="fas fa-microphone"></i>  
+            </div>  
+        </div>  
+    </header>  
+
+    <div class="aboutUs" id="aboutUs">  
+        <h2><b><u><i>About Us</i></u></b></h2>  
+        <p>  
+            At [Your Company Name], we are transforming the way fuel is delivered by offering door-to-door petrol services that save time, enhance convenience, and ensure reliability. Our goal is to make refueling as effortless as possible, empowering individuals, businesses, and fleet operators to focus on what truly matters.  
+        </p>  
+        <h3><b><u><i>Our Mission</i></u></b></h3>  
+        <p>  
+            We are committed to providing fast, safe, and efficient fuel delivery solutions while promoting sustainability and innovation in the energy sector.  
+        </p>  
+        <h3><b><u><i>Why Choose Us?</i></u></b></h3>  
+        <ul>  
+            <li>Convenience at Your Fingertips: With our user-friendly app/website, you can schedule fuel deliveries anytime, anywhere.</li>  
+            <li>24/7 Availability: Our services are available around the clock to ensure you never face fuel shortages, even during emergencies.</li>  
+            <li>Custom Solutions: Tailored fuel delivery plans for corporate clients, logistics companies, and fleet operators.</li>  
+            <li>Eco-Friendly Approach: Reducing carbon emissions and promoting sustainable practices.</li>  
+            <li>Advanced Technology: Real-time tracking, secure payments, and automated scheduling.</li>  
+        </ul>  
+        <div id="additionalInfo" style="display:none;">  
+            <h4><b><u><i>Our Commitment to Sustainability</i></u></b></h4>  
+            <p>  
+                We continuously strive to implement eco-friendly practices at every step of our operations, ensuring that our services contribute positively to the environment and the communities we serve.  
+            </p>  
+            <h4><b><u><i>Customer Service Excellence</i></u></b></h4>  
+            <p>  
+                Our customer support team is readily available to assist you with any inquiries or issues, ensuring a smooth and satisfactory experience for our clients.  
+            </p>  
+        </div>  
+        <p>  
+            At [Your Company Name], we are not just delivering fuel – we are delivering peace of mind.  
+        </p>  
+        <p><b>Fueling the future, one delivery at a time.</b></p>  
+        <button class="read-more" onclick="toggleAboutUs()">Read More</button>  
+    </div>  
+
+    <script>  
+        function toggleAboutUs() {  
+            const aboutUsSection = document.getElementById('aboutUs');  
+            const additionalInfo = document.getElementById('additionalInfo');  
+            const button = document.querySelector('.read-more');  
+
+            if (additionalInfo.style.display === "none") {  
+                additionalInfo.style.display = "block";  
+                button.innerText = "Read Less";  
+            } else {  
+                additionalInfo.style.display = "none";  
+                button.innerText = "Read More";  
+            }  
+        }  
+    </script>  
+</body>  
+</html>

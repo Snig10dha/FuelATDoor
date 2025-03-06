@@ -1,0 +1,460 @@
+  
+        body {  
+            margin: 0;  
+            background-color: #e0f7fa;  
+        }  
+
+        header {  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+            background-color: #0077b6;  
+            color: white;  
+            padding: 10px 20px;  
+        }  
+
+        .logo h1 {  
+            margin: 0;  
+            color: black;  
+        }  
+
+        nav ul {  
+            list-style-type: none;  
+            margin: 0;  
+            padding: 0;  
+            display: flex;  
+        }  
+
+        nav ul li {  
+            margin: 0 15px;  
+        }  
+
+        nav ul li a {  
+            color: white;  
+            text-decoration: none;  
+            padding: 10px 15px; /* Adds padding for better clickability */  
+            transition: background 0.3s, color 0.3s; /* Smooth transition for background and text color */  
+        }  
+
+        nav ul li a:hover {  
+            background: rgba(255, 255, 255, 0.2); /* Change background on hover */  
+            color:black; /* Change text color on hover */  
+            border-radius: 5px; /* Rounded corners for the hover background */  
+        }  
+
+        .search-container {  
+            display: flex;  
+            align-items: center;  
+            border: 1px solid #ff5722;  
+            border-radius: 25px;  
+            padding: 5px 10px;  
+            background-color: white;  
+        }  
+
+        .search-icon, .mic-icon {  
+            color: #ff5722;  
+            cursor: pointer;  
+        }  
+
+        input {  
+            border: none;  
+            outline: none;  
+            padding: 10px;  
+            flex-grow: 1;  
+            font-size: 16px;  
+        }  
+
+        .banner {  
+            background-color: #009688;  
+            color: white;  
+            text-align: center;  
+            padding: 50px 20px;  
+        }  
+
+        .banner h2 {  
+            font-size: 2.5em;  
+        }  
+
+        .banner p {  
+            font-size: 1.2em;  
+        }  
+
+        button {  
+            padding: 10px 20px;  
+            background-color: #ff5722;  
+            color: white;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+        }  
+
+        button:hover {  
+            background-color:black;  
+        }  
+
+        footer {  
+            text-align: center;  
+            padding: 20px 0;  
+            background-color: #0077b6;  
+            color: white;  
+        }  
+
+        .social {  
+            list-style-type: none;  
+            padding: 0;  
+        }  
+
+        .social li {  
+            display: inline;  
+            margin: 0 10px;  
+        }  
+
+        .social li a {  
+            color: white; /* Default link color */  
+            text-decoration: none; /* Remove underline */  
+            transition: color 0.3s; /* Smooth color transition */  
+        }  
+
+        .social li a:hover {  
+            color: #ff5722; /* Change link color on hover */  
+            text-decoration: none; /* Underline text on hover */  
+        }  
+
+        .category-section {  
+            display: grid;  
+            grid-template-columns: repeat(3, 1fr);  
+            grid-template-rows: repeat(2, 1fr);  
+            gap: 20px;  
+            margin: 20px;  
+            position: relative;  
+            height: 600px; /* Full height of the background change */  
+            overflow: hidden; /* Ensures that overflow is hidden */  
+        }  
+
+        .category {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            background: rgba(255, 255, 255, 0.8);  
+            border-radius: 10px;  
+            cursor: pointer;  
+            height: 100%;  
+            transition: 0.3s ease;  
+        }  
+
+        .category:hover {  
+            background:brown; /* Change color on hover */  
+        }  
+
+        .background-image {  
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            height: 100%;  
+            width: 100%;  
+            opacity: 0;   
+            transition: opacity 0.5s ease;   
+            background-size: cover;  
+            background-position: center;  
+        }  
+        .category {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    background: rgba(255, 255, 255, 0.8);  
+    border-radius: 10px;  
+    cursor: pointer;  
+    height: 100%;  
+    transition: background 0.3s ease, transform 0.3s ease; /* Add transform transition */  
+    background-size: cover; /* Covers the entire area */  
+    background-repeat: no-repeat; /* Prevents image repetition */  
+}  
+
+/* Add zoom effect on hover */  
+.category:hover {  
+    background: rgba(255, 165, 0, 0.6); /* Change color on hover */  
+    transform: scale(1.05); /* Scale effect on hover */  
+}  
+
+/* Background images for each category */  
+.motorist {   
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9crolOLQHzw5WML4YysWCb3D1xleQkXIO7w&s');   
+}  
+.households {   
+    background-image: url('https://intownplumbingtx.com/wp-content/uploads/2024/01/Gas-Safety-for-Kids-Educating-Your-Children-on-Household-Gas-Hazards.jpg');   
+}  
+.business-partners {   
+    background-image: url('business-partners-bg.jpg');   
+}  
+.careers {   
+    background-image: url('careers-bg.jpg');   
+}  
+.businesses {   
+    background-image: url('businesses-bg.jpg');   
+}  
+.society {   
+    background-image: url('society-bg.jpg');   
+}  
+.media {   
+    background-image: url('media-bg.jpg');   
+}  
+.environment {   
+    background-image: url('environment-bg.jpg');   
+}  
+.investors {   
+    background-image: url('investors-bg.jpg');   
+}
+
+        /* Show image opacity based on hover state  
+        .category:hover ~ .background-image {  
+            opacity: 0.7; /* Make background visible on hover  
+        }   */
+
+        /* Chatbot styles */  
+        .chatbot {  
+            position: fixed;  
+            bottom: 20px;  
+            right: 20px;  
+            width: 300px;  
+            background-color: #fff;  
+            border: 1px solid #0077b6;  
+            border-radius: 10px;  
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);  
+            display: flex;  
+            flex-direction: column;  
+            z-index: 1000; /* ensures the chatbot is on top of other elements */  
+        }  
+
+        .chatbot-header {  
+            background-color: #0077b6;  
+            color: white;  
+            padding: 10px;  
+            border-top-left-radius: 10px;  
+            border-top-right-radius: 10px;  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+        }  
+
+        .chatbot-messages {  
+            flex-grow: 1;  
+            padding: 10px;  
+            height: 200px;  
+            overflow-y: auto;  
+            border-bottom: 1px solid #0077b6;  
+        }  
+
+        .chatbot-input {  
+            display: flex;  
+            border-top: 1px solid #0077b6;  
+        }  
+
+        .chatbot-input input {  
+            flex-grow: 1;  
+            border: none;  
+            padding: 10px;  
+            font-size: 16px;  
+        }  
+
+        .chatbot-input button {  
+            background-color: #ff5722;  
+            border: none;  
+            color: white;  
+            padding: 10px;  
+            cursor: pointer;  
+        }  
+        .aboutUs {  
+            background-color: white;  
+            border-radius: 10px;  
+            padding: 20px;  
+            margin: 20px;  
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+            transition: max-height 0.5s ease;  
+        }  
+
+        .aboutUs h2 {  
+            color: #0077b6;  
+            margin-bottom: 10px;  
+            font-size: 24px;  /* Adjusted font size */  
+        }  
+
+        .aboutUs p {  
+            line-height: 1.6;  
+            margin-bottom: 10px;  
+            color: #333;  /* Changed font color */  
+            font-size: 18px;  /* Adjusted font size */  
+        }  
+
+        .aboutUs ul {  
+            list-style: inside;  
+        }  
+
+        .read-more {  
+            background-color: #0077b6;  
+            color: white;  
+            padding: 10px 15px;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            transition: background 0.3s;  
+        }  
+
+        .read-more:hover {  
+            background-color: #005f8a;  
+        }  
+        .close-btn {  
+            background: none;  
+            border: none;  
+            color: white;  
+            cursor: pointer;  
+            font-size: 18px;  
+        }  
+        .logo{
+            display:flex;
+            flex-direction: row;
+        }
+        .description{
+            margin-left:20px;
+        }
+        .modal {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            position: fixed;  
+            z-index: 1000;  
+            left: 0;  
+            top: 0;  
+            width: 100%;  
+            height: 100%;  
+            background-color: rgba(0, 0, 0, 0.5);  
+        }  
+        
+        .modal-content {  
+            background-color: #fff;  
+            padding: 20px;  
+            border-radius: 5px;  
+            text-align: center;  
+            width: 300px;  
+        }  
+        
+        .close {  
+            cursor: pointer;  
+            float: right;  
+            font-size: 20px;  
+        }  
+        
+        .auth-options button {  
+            margin: 10px;  
+        }
+        .category-section {  
+            display: flex;  
+            flex-wrap: wrap;  
+            position: relative;  
+        }  
+        
+        .category {  
+            flex: 20%; /* Adjust as necessary */  
+            padding: 20px;  
+            margin: 10px;  
+            background-color: lightgray; /* Background to highlight categories */  
+            border-radius: 5px;  
+            text-align: center;  
+            cursor: pointer;  
+            position: relative;  
+        }  
+        
+        .background-image {  
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            width: 100%;  
+            height: 100%;  
+            opacity: 0.5; /* Adjust opacity of background image */  
+            background-position: center;  
+            background-repeat: no-repeat;  
+            background-size: cover;  
+        }  
+        
+        /* Apply unique backgrounds */  
+        .motorist {  
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoS_7WcAPXcT8ZAoJDKvghLqNTw7Grwztq8w&s');  
+        }  
+        
+        .households {  
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ9Alio0IWm_-OwT0MTcVYehaXy06SjmjHGA&s');  
+        }  
+        
+        .business-partners {  
+            background-image: url('https://media.istockphoto.com/id/660883784/photo/business-people-silhouettes.jpg?s=612x612&w=0&k=20&c=rLPkZ7PjIio_Z00tpYZyX__v1p6DFl5C-lLly3mGO4w=');  
+        }  
+        
+        .careers {  
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7V846E0pvLhVgAL_jUhgWRpwtIvwX4XWKtw&s');  
+        }  
+        
+        .businesses {  
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAYLnkhbrMIA0_gHfR31X78mwl33J-CR-dcLEs-ChxiOnQICH9iLGd1tAIj7CqH99a2kA&usqp=CAU');  
+        }  
+        
+        .society {  
+            background-image: url('https://thumbs.dreamstime.com/b/crowd-identical-human-silhouettes-black-white-symbolizing-conformity-anonymity-loss-individual-identity-ai-generated-344867943.jpg');  
+        }  
+        
+        .media {  
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoWMUJ9r3WLiF4cDhQVJyWRPVCheliznJN5A&s');  
+        }  
+        
+        .environment {  
+            background-image: url('https://i.pinimg.com/originals/99/e8/14/99e814c1ca80a8402a25b5ddd26b43b4.jpg');  
+        }  
+        
+        .investors {  
+            background-image: url('https://c8.alamy.com/comp/F14H91/1930s-six-engrossed-investors-and-stock-brokers-reading-paper-ticker-F14H91.jpg');  
+        }.image-scroll-bar {  
+            display: flex;  
+            overflow: hidden; /* Hide overflow for smoother scrolling */  
+            padding: 10px;  
+            background-color: #f9f9f9;  
+            margin: 20px 0;  
+            animation: scroll-left 30s linear infinite; /* Animation parameters */  
+        }  
+        
+        @keyframes scroll-left {  
+            0% {  
+                transform: translateX(100%); /* Start outside the right edge */  
+            }  
+            100% {  
+                transform: translateX(-100%); /* Move to outside the left edge */  
+            }  
+        }  
+        
+        .image-scroll-bar img {  
+            height: 150px;  
+            margin: 0 10px;  
+            border-radius: 5px;  
+        }  
+        .image-scroll-wrapper {  
+    overflow: hidden; /* Hide overflow to avoid scrollbars */  
+    position: relative; /* Allows positioning of inner content */  
+    width: 100%; /* Full width of container */  
+}  
+
+.image-scroll-bar {  
+    display: flex;  
+    animation: scroll-left 5s linear infinite; /* Define the animation for scrolling */  
+}  
+
+@keyframes scroll-left {  
+    0% {  
+        transform: translateX(0); /* Start position */  
+    }  
+    100% {  
+        transform: translateX(-50%); /* End position */  
+    }  
+}  
+
+.image-scroll-bar img {  
+    height: 150px;  
+    margin: 0 10px;  
+    border-radius: 5px;  
+}  

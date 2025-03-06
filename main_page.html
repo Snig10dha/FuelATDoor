@@ -1,0 +1,298 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>IndianOil Mockup</title>  
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel = "stylesheet" href="style.css"> 
+    <style>  
+        /* General Styles */  
+        body {  
+            margin: 0;  
+            font-family: Arial, sans-serif;  
+            transition: background-color 0.3s, color 0.3s;  
+        }  
+
+        /* Dark Mode Styles */  
+        body.dark-mode {  
+            background-color: #121212;  
+            color: #ffffff;  
+        }  
+
+        /* Header and Navigation Styles */  
+        header {  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+            padding: 20px;  
+            background: #002855;  
+            color: white;  
+        }  
+
+        .logo img {  
+            width: 100px;  
+            height: 100px;  
+        }  
+
+        nav ul {  
+            list-style: none;  
+            display: flex;  
+            gap: 20px;  
+            margin: 0;  
+            padding: 0;  
+        }  
+
+        nav ul li a {  
+            color: white;  
+            text-decoration: none;  
+            font-weight: bold;  
+        }  
+
+        /* Banner Styles */  
+        .banner {  
+            background: #ff8303;  
+            color: white;  
+            padding: 50px;  
+            text-align: center;  
+        }  
+
+        /* Category Section */  
+        .category-section {  
+            display: flex;  
+            flex-wrap: wrap;  
+            justify-content: center;  
+            margin: 20px 0;  
+        }  
+
+        .category {  
+            background: #f0f0f0;  
+            margin: 10px;  
+            padding: 20px;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            transition: background 0.3s;  
+        }  
+
+        .category:hover {  
+            background: #e0e0e0;  
+        }  
+
+        /* About Us Section */  
+        .aboutUs {  
+            padding: 20px;  
+        }  
+
+        /* Footer Styles */  
+        footer {  
+            background: #002855;  
+            color: white;  
+            text-align: center;  
+            padding: 15px;  
+        }  
+
+        .social {  
+            list-style: none;  
+            display: flex;  
+            justify-content: center;  
+            padding: 0;  
+        }  
+
+        .social li {  
+            margin: 0 10px;  
+        }  
+
+        .social a {  
+            color: white;  
+            text-decoration: none;  
+            font-size: 24px;  
+        }  
+
+        /* Go to Top Button */  
+        .go-to-top {  
+            position: fixed;  
+            bottom: 40px;  
+            right: 40px;  
+            background-color: #002855;  
+            color: white;  
+            border: none;  
+            border-radius: 50%;  
+            width: 40px;  
+            height: 40px;  
+            display: none;  
+            align-items: center;  
+            justify-content: center;  
+            cursor: pointer;  
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);  
+        }  
+
+        /* Image Scroll Bar */  
+        .image-scroll-bar {  
+            display: flex;  
+            overflow-x: auto;  
+            padding: 10px;  
+            background-color: #f9f9f9;  
+            margin: 20px 0;  
+        }  
+
+        .image-scroll-bar img {  
+            height: 150px;  
+            margin: 0 10px;  
+            border-radius: 5px;  
+        }  
+
+        /* Modal and Chatbot Styles */  
+        /* Add your existing modal and chatbot styles here */  
+    </style>  
+</head>  
+<body class="light-mode">  
+    <!-- Sign In/Sign Up Modal -->  
+    <div class="modal" id="authModal">  
+        <div class="modal-content">  
+            <span class="close" onclick="closeModal()">&times;</span>  
+            <h2>Welcome!</h2>  
+            <div class="auth-options">  
+                <button onclick="showSignIn()">Sign In</button>  
+                <button onclick="showSignUp()">Sign Up</button>  
+            </div>  
+            <div id="signInForm" style="display:none;">  
+                <h3>Sign In</h3>  
+                <input type="text" placeholder="Email" id="signInEmail">  
+                <input type="password" placeholder="Password" id="signInPassword">  
+                <button onclick="signIn()">Submit</button>  
+            </div>  
+            <div id="signUpForm" style="display:none;">  
+                <h3>Sign Up</h3>  
+                <input type="text" placeholder="Name" id="signUpName">  
+                <input type="text" placeholder="Email" id="signUpEmail">  
+                <input type="password" placeholder="Password" id="signUpPassword">  
+                <button onclick="signUp()">Submit</button>  
+            </div>  
+        </div>  
+    </div>  
+
+    <header>  
+        <div class="logo">   
+            <img src="logo.webp" alt="IndianOil Logo">  
+            <div class="description">  
+                <h1>IndianOil</h1>  
+                <p><b><i>The Energy of India</i></b></p>  
+            </div>  
+        </div>  
+        <nav>  
+            <ul>  
+                <li><a href="#">About Us</a></li>  
+                <li><a href="#">IndianOil For You</a></li>  
+                <li><a href="#">IndianOil for Environment</a></li>  
+                <li><a href="#">We are Listening</a></li>  
+            </ul>  
+        </nav>  
+        <div class="search-container">  
+            <input type="text" placeholder="What are you looking for?">  
+            <div class="search-icon">  
+                <i class="fas fa-search"></i>  
+            </div>  
+            <div class="mic-icon">  
+                <i class="fas fa-microphone"></i>  
+            </div>  
+        </div>  
+        <button onclick="toggleDarkMode()">🌙</button> <!-- Dark Mode Toggle Button -->  
+    </header>  
+
+    <section class="banner">  
+        <div class="content">  
+            <h2>Pariksha Pe Charcha 2025</h2>  
+            <p>Join the event & get unique exam tips from Hon'ble Prime Minister Narendra Modi</p>  
+            <button onclick="participate()">Participate Now</button>  
+        </div>  
+    </section>  
+
+    <!-- Image Scroll Bar for Pariksha Pe Charcha -->  
+    <div class="image-scroll-bar">  
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoS_7WcAPXcT8ZAoJDKvghLqNTw7Grwztq8w&s" alt="Event Image 1">  
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ9Alio0IWm_-OwT0MTcVYehaXy06SjmjHGA&s" alt="Event Image 2">  
+        <img src="https://media.istockphoto.com/id/660883784/photo/business-people-silhouettes.jpg?s=612x612&w=0&k=20&c=rLPkZ7PjIio_Z00tpYZyX__v1p6DFl5C-lLly3mGO4w=" alt="Event Image 3">  
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoWMUJ9r3WLiF4cDhQVJyWRPVCheliznJN5A&s" alt="Event Image 4">  
+        <img src="https://i.pinimg.com/originals/99/e8/14/99e814c1ca80a8402a25b5ddd26b43b4.jpg" alt="Event Image 5"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoS_7WcAPXcT8ZAoJDKvghLqNTw7Grwztq8w&s" alt="Event Image 1">  
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ9Alio0IWm_-OwT0MTcVYehaXy06SjmjHGA&s" alt="Event Image 2">  
+    </div>  
+
+    <!-- New Category Section -->  
+    <div class="category-section">  
+        <div class="category motorist" onclick="categorySelected('Motorist')">Motorist</div>  
+        <div class="category households" onclick="categorySelected('Households')">Households</div>  
+        <div class="category business-partners" onclick="categorySelected('Business Partners')">Business Partners</div>  
+        <div class="category careers" onclick="categorySelected('Careers')">Careers</div>  
+        <div class="category businesses" onclick="categorySelected('Businesses')">Businesses</div>  
+        <div class="category society" onclick="categorySelected('Society')">Society</div>  
+        <div class="category media" onclick="categorySelected('Media')">Media</div>  
+        <div class="category environment" onclick="categorySelected('Environment')">Environment</div>  
+        <div class="category investors" onclick="categorySelected('Investors')">Investors</div>  
+    </div>  
+
+    <div class="aboutUs" id="aboutUs">  
+        <h2><b><u><i>About Us</i></u></b></h2>  
+        <p>  
+            At [Your Company Name], we are transforming the way fuel is delivered by offering door-to-door petrol services that save time, enhance convenience, and ensure reliability. Our goal is to make refueling as effortless as possible, empowering individuals, businesses, and fleet operators to focus on what truly matters.  
+        </p>  
+        <h3><b><u><i>Our Mission</i></u></b></h3>  
+        <p>  
+            We are committed to providing fast, safe, and efficient fuel delivery solutions while promoting sustainability and innovation in the energy sector.  
+        </p>  
+        <h3><b><u><i>Why Choose Us?</i></u></b></h3>  
+        <ul>  
+            <li>Convenience at Your Fingertips: With our user-friendly app/website, you can schedule fuel deliveries anytime, anywhere.</li>  
+            <li>24/7 Availability: Our services are available around the clock to ensure you never face fuel shortages, even during emergencies.</li>  
+            <li>Custom Solutions: Tailored fuel delivery plans for corporate clients, logistics companies, and fleet operators.</li>  
+            <li>Eco-Friendly Approach: Reducing carbon emissions and promoting sustainable practices.</li>  
+            <li>Advanced Technology: Real-time tracking, secure payments, and automated scheduling.</li>  
+        </ul>  
+        <div id="additionalInfo" style="display:none;">  
+            <h4><b><u><i>Our Commitment to Sustainability</i></u></b></h4>  
+            <p>  
+                We continuously strive to implement eco-friendly practices at every step of our operations, ensuring that our services contribute positively to the environment and the communities we serve.  
+            </p>  
+            <h4><b><u><i>Customer Service Excellence</i></u></b></h4>  
+            <p>  
+                Our customer support team is readily available to assist you with any inquiries or issues, ensuring a smooth and satisfactory experience for our clients.  
+            </p>  
+        </div>  
+        <p>  
+            At [Your Company Name], we are not just delivering fuel – we are delivering peace of mind.  
+        </p>  
+        <p><b>Fueling the future, one delivery at a time.</b></p>  
+        <button class="read-more" onclick="toggleAboutUs()">Read More</button>  
+    </div>  
+ 
+
+    <footer>  
+        <p>Follow us on:</p>  
+        <ul class="social">  
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>  
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>  
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>  
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>  
+        </ul>  
+    </footer>  
+
+    <!-- Go to Top Button -->  
+    <button class="go-to-top" id="goToTop" onclick="scrollToTop()">↑</button>  
+
+    <!-- Chatbot -->  
+    <div class="chatbot" id="chatbot">  
+        <div class="chatbot-header">Chat with Us  
+            <button class="close-btn" onclick="closeChatbot()">✖</button>  
+        </div>  
+        <div class="chatbot-messages" id="chatbot-messages">  
+            <p>👋 Hi! How can we assist you today?</p>  
+        </div>  
+        <div class="chatbot-input">  
+            <input type="text" id="user-input" placeholder="Ask a question..." onkeypress="checkEnter(event)">  
+            <button onclick="sendMessage()">Send</button>  
+        </div>  
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
+    <script src = "script.js"></script>
+</body>  
+</html>
